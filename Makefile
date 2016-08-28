@@ -9,9 +9,9 @@ TEXS = $(patsubst %, %.tex, $(DOCS))
 .tex.pdf:
 	-latexmk -quiet -f -pdf $<
 
-tex: $(patsubst %.tex, %.pdf, $(TEXS))
+tex := $(patsubst %.tex, %.pdf, $(TEXS))
 
-all: clean tex
+all: clean $(tex)
 
 clean:
 	-latexmk -quiet -c $(TEXS)
