@@ -58,16 +58,30 @@
 
 % transitions frame
 \section{Transitions}
-\begin{frame}{Transitions}
+\begin{frame}{Transitions - 1}
   This slide has 3 transitional items \ldots
-  \pause{}
+  \setbeamercolor{normal text}{fg=gray}
+  \setbeamercolor{alerted text}{fg=blue}
+  \usebeamercolor{normal text}
   \begin{itemize}
-    \item{} first item
-      \pause{}
-    \item{} second item
-      \pause{}
-    \item{} third item
+    \item<+-|alert@+> first item
+    \item<+-|alert@+> second item
+    \item<+-|alert@+> third item
   \end{itemize}
+\end{frame}
+
+\begin{frame}{Transitions - 2}
+  \begin{itemize}
+    \item Language used by Beamer: L\uncover<2->{A}TEX
+    \item Language used by Beamer: L\only<2->{A}TEX
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{Transitions - 3}
+  appear from slide 1 \newline
+  \only<2> {appear on slide 2 \newline}
+  \only<3> {appear on slide 3 \newline}
+  \only<4> {appear on slide 4 \newline}
 \end{frame}
 
 \end{document}
