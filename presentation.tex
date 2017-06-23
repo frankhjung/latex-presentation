@@ -77,11 +77,21 @@
   \end{itemize}
 \end{frame}
 
-\begin{frame}{Transitions - 3}
-  appear from slide 1 \newline
-  \only<2> {appear on slide 2 \newline}
-  \only<3> {appear on slide 3 \newline}
-  \only<4> {appear on slide 4 \newline}
+\begin{frame}[t]{Transitions - 3}
+  \only<1,2> {{\small\color{blue}$\bullet$} appear on slide 1,2 \newline}
+  \only<2> {{\small\color{blue}$\bullet$} appear on slide 2 \newline}
+  \only<3> {{\small\color{blue}$\bullet$} appear on slide 3 \newline}
+  \only<4> {{\small\color{blue}$\bullet$} appear on slide 4 \newline}
+\end{frame}
+
+\begin{frame}{Transitions - 4}
+  \frametitle{Transition with Overwrite}
+  \setbeamercolor{alerted text}{fg=blue}
+  \begin{enumerate}
+    \item<+-> {a normal item}
+    \item<+-|alert@+(1)> {an extraordinary item}
+    \item[]
+  \end{enumerate}
 \end{frame}
 
 \end{document}
