@@ -7,8 +7,10 @@
 *.fls
 *.gz
 *.lo?
+_minted-presentation/
 *.nav
 *.out
 *.pdf
 *.snm
 *.toc
+*.vrb

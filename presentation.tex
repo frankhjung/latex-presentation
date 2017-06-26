@@ -3,9 +3,22 @@
 \mode<presentation>{
   \usetheme{Singapore}          % others: default Singapore Warsaw
   \usecolortheme{dolphin}       % beetle beaver orchid whale dolphin
-  % \useinnertheme{circles}       % circles rectangles rounded inmargin
-  % \useoutertheme{tree}          % infolines smoothbars sidebar split tree
   \setbeamertemplate{sections/subsections in toc}[ball unnumbered]  % others: circle ball square
+  \usepackage{listings}
+  \lstset{
+    basicstyle=\scriptsize,
+    frame=none,
+    columns=l,
+    tabsize=2,
+    showspaces=false,
+    showtabs=false
+  }
+  \usepackage{minted}
+  \setminted{
+    autogobble=true,
+    fontsize=\scriptsize,
+    style=borland,
+  }
 }
 
 % preamble
@@ -18,24 +31,26 @@
 
 \begin{document}
 
-% title frame
+\section{Title Page}
+
 \begin{frame}
   \titlepage{}
 \end{frame}
 
-% contents frame
+\section{Contents}
+
 \begin{frame}{Contents}
   \tableofcontents{}
 \end{frame}
 
-% normal frame
 \section{Empty Body}
+
 \begin{frame}{Frame Title}
     The body of the frame.
 \end{frame}
 
-% numbered points
 \section{Numbered Points}
+
 \begin{frame}{Numbered Points}
   Numbered points
   \begin{enumerate}
@@ -45,8 +60,8 @@
   \end{enumerate}
 \end{frame}
 
-% bullet points
 \section{Bullet Points}
+
 \begin{frame}{Bullet Points}
   Bullet points
   \begin{itemize}
@@ -56,8 +71,8 @@
   \end{itemize}
 \end{frame}
 
-% transitions frame
 \section{Transitions}
+
 \begin{frame}{Transitions - 1}
   This slide has 3 transitional items \ldots
   \setbeamercolor{normal text}{fg=gray}
@@ -92,6 +107,54 @@
     \item<+-|alert@+(1)> {an extraordinary item}
     \item[]
   \end{enumerate}
+\end{frame}
+
+\section{Code Listings}
+
+\begin{frame}
+  \frametitle{lstlisting - 1}
+  Code from file \ldots
+  \lstinputlisting[language=python]{example.py}
+\end{frame}
+
+\begin{frame}[fragile]
+  \frametitle{lstlisting - 2}
+  Code from file \ldots
+  \begin{lstlisting}[language=python]
+#!/usr/bin/python
+
+def count(word, char):
+    ''' Count occurrences of character in string. '''
+    return word.count(char)
+
+class FilterModule(object):
+    ''' Custom Jinja2 filters. '''
+    def filters(self):
+        return {'count': count}
+  \end{lstlisting}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Minted Listing - 1}
+  Code from file \ldots
+  \inputminted{python}{example.py}
+\end{frame}
+
+\begin{frame}[fragile]
+  \frametitle{Minted Listing - 2}
+  Inline code \ldots
+  \begin{minted}{python}
+#!/usr/bin/python
+
+def count(word, char):
+    ''' Count occurrences of character in string. '''
+    return word.count(char)
+
+class FilterModule(object):
+    ''' Custom Jinja2 filters. '''
+    def filters(self):
+        return {'count': count}
+  \end{minted}
 \end{frame}
 
 \end{document}
