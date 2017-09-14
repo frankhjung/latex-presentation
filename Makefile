@@ -2,16 +2,15 @@
 
 .PHONY: all clean cleanall
 .SUFFIXES: .tex .pdf
+.DEFAULT: all
 
-DOCS = presentation
-TEXS = $(patsubst %, %.tex, $(DOCS))
+TARGET = presentation.pdf
+TEXS = $(patsubst %.pdf, %.tex, $(TARGET))
 
 .tex.pdf:
 	-latexmk -quiet -f -pdf -shell-escape $<
 
-tex := $(patsubst %.tex, %.pdf, $(TEXS))
-
-all: clean $(tex)
+all: clean $(TARGET)
 
 clean:
 	-latexmk -quiet -c $(TEXS)
