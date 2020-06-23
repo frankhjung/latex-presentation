@@ -1,16 +1,20 @@
 #!/usr/bin/env make
 
-.PHONY: all clean cleanall
+.PHONY: all lint clean cleanall
 .SUFFIXES: .tex .pdf
 .DEFAULT: all
 
 TARGET = presentation.pdf
-TEXS = $(patsubst %.pdf, %.tex, $(TARGET))
+TEXS   = $(patsubst %.pdf, %.tex, $(TARGET))
 
 .tex.pdf:
-	-latexmk -quiet -f -pdf -shell-escape $<
+	-latexmk -f -quiet -pdf -shell-escape $<
 
-all: clean $(TARGET)
+all: lint $(TARGET)
+
+lint:
+	@#lacheck $(TEXS)
+	-chktex $(TEXS)
 
 clean:
 	-latexmk -quiet -c $(TEXS)

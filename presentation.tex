@@ -73,7 +73,7 @@
 
 \section{Transitions}
 
-\begin{frame}{Transitions - 1}
+\begin{frame}{Transitions --- 1}
   This slide has 3 transitional items \ldots
   \setbeamercolor{normal text}{fg=gray}
   \setbeamercolor{alerted text}{fg=blue}
@@ -85,26 +85,26 @@
   \end{itemize}
 \end{frame}
 
-\begin{frame}{Transitions - 2}
+\begin{frame}{Transitions --- 2}
   \begin{itemize}
     \item Language used by Beamer: L\uncover<2->{A}TEX
     \item Language used by Beamer: L\only<2->{A}TEX
   \end{itemize}
 \end{frame}
 
-\begin{frame}[t]{Transitions - 3}
+\begin{frame}[t]{Transitions --- 3}
   \only<1,2> {{\small\color{blue}$\bullet$} appear on slide 1,2 \newline}
   \only<2> {{\small\color{blue}$\bullet$} appear on slide 2 \newline}
   \only<3> {{\small\color{blue}$\bullet$} appear on slide 3 \newline}
   \only<4> {{\small\color{blue}$\bullet$} appear on slide 4 \newline}
 \end{frame}
 
-\begin{frame}{Transitions - 4}
+\begin{frame}{Transitions --- 4}
   \frametitle{Transition with Overwrite}
   \setbeamercolor{alerted text}{fg=blue}
   \begin{enumerate}
     \item<+-> {a normal item}
-    \item<+-|alert@+(1)> {an extraordinary item}
+    \item<+-|alert@ + (1) > {an extraordinary item}
     \item[]
   \end{enumerate}
 \end{frame}
@@ -112,13 +112,13 @@
 \section{Code Listings}
 
 \begin{frame}
-  \frametitle{lstlisting - 1}
+  \frametitle{lstlisting --- 1}
   Code from file \ldots
   \lstinputlisting[language=python]{example.py}
 \end{frame}
 
 \begin{frame}[fragile]
-  \frametitle{lstlisting - 2}
+  \frametitle{lstlisting --- 2}
   Code from file \ldots
   \begin{lstlisting}[language=python]
 #!/usr/bin/python
@@ -135,13 +135,13 @@ class FilterModule(object):
 \end{frame}
 
 \begin{frame}
-  \frametitle{Minted Listing - 1}
+  \frametitle{Minted Listing --- 1}
   Code from file \ldots
   \inputminted{python}{example.py}
 \end{frame}
 
 \begin{frame}[fragile]
-  \frametitle{Minted Listing - 2}
+  \frametitle{Minted Listing --- 2}
   Inline code \ldots
   \begin{minted}{python}
 #!/usr/bin/python

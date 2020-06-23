@@ -1,6 +1,7 @@
 *~
 *.aux
 *.bak
+beamer-introduction.tex
 *.dvi
 *.eps
 *.fdb_latexmk
